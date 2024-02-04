@@ -1,0 +1,19 @@
+  <script>
+    var time = {{ delay }}
+    function decreaseTime(){
+      time = time - 1
+      if (time <= 1) {
+        // $("#success_url").text("Continuer (" + String(time) + " seconde)")
+        $(':button').text("Continuer (" + String(time) + " seconde)")
+      } else {
+        // $("#success_url").text("Continuer (" + String(time) + " secondes)")
+        $(':button').text("Continuer (" + String(time) + " secondes)")
+      }
+      if (time == 0) {
+        clearInterval(refreshIntervalId)
+        // $("#success_url")[0].click()
+        $(':button').click()
+      }
+    }
+    var refreshIntervalId = setInterval(decreaseTime, 1000);
+  </script>

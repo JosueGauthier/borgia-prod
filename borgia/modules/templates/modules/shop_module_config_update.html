@@ -1,0 +1,40 @@
+{% extends 'base_sober.html' %}
+{% load bootstrap %}
+
+{% block content %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Configuration du {{ module }}
+  </div>
+  <div class="panel-body">
+    <form method="post">
+      {% csrf_token %}
+      <!-- {{ form|bootstrap }} -->
+      <!-- # :::  -->
+      {% if module_class == "operator_sales" %}
+          {{ form|bootstrap }}
+      {% else %}
+          {{ form.state|bootstrap }}
+          {{ form.logout_post_purchase|bootstrap }}
+          {{ form.limit_purchase|bootstrap }}
+          {{ form.infinite_delay_post_purchase|bootstrap }}
+          {{ form.delay_post_purchase|bootstrap }}
+      {% endif %}
+      <button class="btn btn-success" type="submit">Valider</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  $("#id_infinite_delay_post_purchase").change(function() {
+    if ($(this).is(":checked")) {
+      $("#id_delay_post_purchase").hide()
+      $("label[for='id_delay_post_purchase']").hide()
+    } else {
+      $("#id_delay_post_purchase").show()
+      $("label[for='id_delay_post_purchase']").show()
+    }
+  })
+  $("#id_infinite_delay_post_purchase").trigger("change")
+</script>
+{% endblock %}
