@@ -1,6 +1,22 @@
+# Information
+
+This repo is the current prod repo of the Borgia app used in Arts et Metiers ParisTech centers of : 
+
+  ```diff
+  + P3 : Deployed
+  - Boquette : Not deployed
+  - Birse : Not deployed
+  - Sibers : Not deployed
+  - Bordels : Not deployed
+  ```
+
+It contains all the accumulated features of the past years from all Borgia centers. 
+
+
+
 # ![Borgia](./borgia/static/static_dirs/img/borgia-logo-light.png 'Borgia')
 
-Current Version : 5.1.x   
+Current Version : 5.3   
 Licence : [GNU GPL version 3](./license.txt)  
 Chat (en/fr): [Join us on Slack](https://borgia-app.slack.com)  
 Master branch: [![Build Status](https://travis-ci.org/borgia-app/Borgia.svg?branch=master)](https://travis-ci.org/borgia-app/Borgia)  
